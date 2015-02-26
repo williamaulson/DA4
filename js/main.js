@@ -166,7 +166,7 @@ window.onload = function()
     	    
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
-    	    var titleText = game.add.text(450, 35, 'Choose the Organ Recipient', textTimeStyle);
+    	    var titleText = game.add.text(300, 30, 'Choose the Organ Recipient', textTimeStyle);
     	    timeText = game.add.text(450, 75, 'STime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
