@@ -268,6 +268,10 @@ window.onload = function()
     function update() //check every frame
     {
     	    timeText.setText('Time Left: ' + Math.floor(((15000 - (game.time.now - startTime)) / 1000) % 60));
+    	    if (Math.floor(((15000 - (game.time.now - startTime)) / 1000) % 60) <= 0)
+    	    {
+    	    	    startTime = game.time.now;
+    	    }
     	    
     	    player.body.velocity.x = 0;
     	    player.body.velocity.y = 0;
