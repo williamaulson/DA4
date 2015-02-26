@@ -166,7 +166,7 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    //timeText = game.add.text(490, 75, 'Time Left: ' + (game.time.now - startTime), textTimeStyle);
-    	    timeText = game.add.text(450, 75, 'PTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(450, 75, 'OTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -330,7 +330,7 @@ window.onload = function()
     	    	    	    {
     	    	    	    	    runCount = runCount + 1;
     	    	    	    }
-    	    	    	    if (runCount === 4)
+    	    	    	    if (runCount === 5)
     	    	    	    {
     	    	    	    	    gameRunning = false;
     	    	    	    	    endGame();
@@ -822,12 +822,12 @@ window.onload = function()
     function endGame()
     {
     	    var endback = game.add.sprite(0, 0, 'endback');
-    	    var tx1 = 'For your ' + choice[0] + ' choice you ' + choiceText[choiceArray[0]] + '.\n';
-    	    var tx2 = 'For your ' + choice[1] + ' choice you ' + choiceText[choiceArray[1]] + '.\n';
-    	    var tx3 = 'For your ' + choice[2] + ' choice you ' + choiceText[choiceArray[2]] + '.\n';
-    	    var tx4 = 'For your ' + choice[3] + ' choice you ' + choiceText[choiceArray[3]] + '.\n';
-    	    var tx5 = 'For your ' + choice[4] + ' choice you ' + choiceText[choiceArray[4]] + '.\n';
-    	    var endtext = game.add.text(100, 75, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?', textStyle);
+    	    var tx1 = 'For your ' + choice[0] + ' choice you ' + choiceText[choiceArray[0]] + '.\n\n';
+    	    var tx2 = 'For your ' + choice[1] + ' choice you ' + choiceText[choiceArray[1]] + '.\n\n';
+    	    var tx3 = 'For your ' + choice[2] + ' choice you ' + choiceText[choiceArray[2]] + '.\n\n';
+    	    var tx4 = 'For your ' + choice[3] + ' choice you ' + choiceText[choiceArray[3]] + '.\n\n';
+    	    var tx5 = 'For your ' + choice[4] + ' choice you ' + choiceText[choiceArray[4]] + '.\n\n';
+    	    var endtext = game.add.text(110, 75, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?', textStyle);
     }
     
     
