@@ -168,9 +168,9 @@ window.onload = function()
     	    
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
-    	    var titleText = game.add.text(340, 25, 'Choose the Organ Recipient', textTitleStyle);
-    	    timeText = game.add.text(450, 75, 'ZTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
-    	    hurryText = game.add.text(470, 350, '', textTitleStyle);
+    	    var titleText = game.add.text(300, 20, 'Choose the Organ Recipient', textTitleStyle);
+    	    timeText = game.add.text(450, 75, 'QTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    hurryText = game.add.text(470, 250, '', textTitleStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
