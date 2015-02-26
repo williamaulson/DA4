@@ -17,12 +17,10 @@ window.onload = function()
     	    game.load.image( 'b2', 'assets/b2.png' );
     	    game.load.image( 'bdown', 'assets/bdown.png' );
     	    game.load.audio('beat', 'assets/beat.mp3');
-    	    game.load.audio('tick', 'assets/tick.mp3');
     }
     //variables
     var player;
     var cursors;
-    var spaceKey;
     var b1;
     var b2;
     var bdown;
@@ -84,12 +82,11 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    var titleText = game.add.text(280, 15, 'Choose the Organ Recipient', textTitleStyle);
-    	    timeText = game.add.text(450, 75, 'PTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(450, 75, 'Time Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	    hurryText = game.add.text(470, 270, '', textTitleStyle);
     	        	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
-    	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    	    
+    	        	    
     	    beat = game.add.audio('beat');
     	    beat.play('',0,0.1,true);
     	    
