@@ -37,6 +37,9 @@ window.onload = function()
     	    
     	    game.load.image( 'back', 'assets/back.png' )
     	    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+    	    game.load.image( 'b1', 'assets/b1.png' )
+    	    game.load.image( 'b2', 'assets/b2.png' )
+    	    game.load.image( 'bdown', 'assets/b2.png' )
     }
     //variables
    /* var player1;
@@ -98,6 +101,9 @@ window.onload = function()
     var player;
     var cursors;
     var spaceKey;
+    var b1;
+    var b2;
+    var bdown;
     
     function create() //create game objects needed to start
     {
@@ -105,6 +111,17 @@ window.onload = function()
     	    game.physics.startSystem(Phaser.Physics.ARCADE);
     	    game.world.setBounds(0, 0, 1024, 576);
     	    var back = game.add.sprite(0, 0, 'back');
+    	    
+    	    b1 = game.add.sprite(100, 400, 'b1');
+    	    b1.anchor.setTo(0.5, 0.5);
+    	    game.physics.arcade.enable(b1);
+    	    b1.body.immovable = true;
+    	    b2 = game.add.sprite(924, 400, 'b2');
+    	    b2.anchor.setTo(0.5, 0.5);
+    	    game.physics.arcade.enable(b2);
+    	    b2.body.immovable = true;
+    	    b3 = game.add.sprite(-500, -500, 'b3');
+    	    b3.anchor.setTo(0.5, 0.5);
     	    
     	    player = game.add.sprite(512, 400, 'dude');
     	    game.physics.arcade.enable(player);
