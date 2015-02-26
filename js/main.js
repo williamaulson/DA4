@@ -109,8 +109,10 @@ window.onload = function()
     var text1;
     var text2;
     var textStyle = { font: "30px Arial", fill: "#000000", align: "center" };
-    var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
-    var p2Text = 'Patient 2\nAge: 52\nIn Prison';
+    //var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
+    //var p2Text = 'Patient 2\nAge: 52\nIn Prison';
+    var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nHIV Positive';
+    var p2Text = 'Patient 2\nAge: 52\nUnemployed\nConvicted of Rape';
     
     function create() //create game objects needed to start
     {
@@ -130,7 +132,7 @@ window.onload = function()
     	    bdown = game.add.sprite(-500, -500, 'bdown');
     	    bdown.anchor.setTo(0.5, 0.5);
     	    
-    	    text1 = game.add.text(85, 75, p1Text, textStyle);
+    	    text1 = game.add.text(75, 75, p1Text, textStyle);
     	    text2 = game.add.text(800, 75, p2Text, textStyle);
     	    
     	    player = game.add.sprite(512, 400, 'dude');
