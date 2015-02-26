@@ -160,8 +160,8 @@ window.onload = function()
     	    player.animations.add('left', [0, 1, 2, 3], 10, true);
     	    player.animations.add('right', [5, 6, 7, 8], 10, true);
     	    
-    	    text1 = game.add.text(75, 75, textArray1[0][1], textStyle);
-    	    text2 = game.add.text(780, 75, textArray2[0][1], textStyle);
+    	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
+    	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    //timeText = game.add.text(490, 75, 'Time Left: ' + (game.time.now - startTime), textTimeStyle);
     	    timeText = game.add.text(430, 75, 'Time Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	        	    
