@@ -136,6 +136,7 @@ window.onload = function()
     var runCount = 0;
     var choice = ['1st', '2nd', '3rd', '4th', '5th'];
     var choiceText = ['', 'choose patient 1', 'choose patient 2', 'did not select any organ recipient'];
+    var gameRunning = true;
     
     function create() //create game objects needed to start
     {
@@ -291,111 +292,115 @@ window.onload = function()
     
     function update() //check every frame
     {
-    	    timeText.setText('Time Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60));
+    	    if (gameRunning)
+    	    {
+    	    	    timeText.setText('Time Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60));
     	    
     	    
-    	    if (((game.time.now - startTime) < 5000))
-    	    {
-    	    	    text1.setText(textArray1[runCount][0]);
-    	    	    text2.setText(textArray2[runCount][0]);
-    	    }
-    	    else if (((game.time.now - startTime) > 5000) && ((game.time.now - startTime) < 10000))
-    	    {
-    	    	    text1.setText(textArray1[runCount][1]);
-    	    	    text2.setText(textArray2[runCount][1]);
-    	    }
-    	    else if (((game.time.now - startTime) > 10000) && ((game.time.now - startTime) < 15999))
-    	    {
-    	    	    text1.setText(textArray1[runCount][2]);
-    	    	    text2.setText(textArray2[runCount][2]);  
-    	    }
-    	    
-    	    if (Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60) <= 0)
-    	    {
-    	    	    startTime = game.time.now;
-    	    	    if (choose1 === true)
+    	    	    if (((game.time.now - startTime) < 5000))
     	    	    {
-    	    	    	    choiceArray[runCount] = 1;
-    	    	    	    runCount = runCount + 1;
+    	    	    	    text1.setText(textArray1[runCount][0]);
+    	    	    	    text2.setText(textArray2[runCount][0]);
     	    	    }
-    	    	    else if (choose2 === true)
+    	    	    else if (((game.time.now - startTime) > 5000) && ((game.time.now - startTime) < 10000))
     	    	    {
-    	    	    	    choiceArray[runCount] = 2;
-    	    	    	    runCount = runCount + 1;
+    	    	    	    text1.setText(textArray1[runCount][1]);
+    	    	    	    text2.setText(textArray2[runCount][1]);
+    	    	    }
+    	    	    else if (((game.time.now - startTime) > 10000) && ((game.time.now - startTime) < 15999))
+    	    	    {
+    	    	    	    text1.setText(textArray1[runCount][2]);
+    	    	    	    text2.setText(textArray2[runCount][2]);  
+    	    	    }
+    	    
+    	    	    if (Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60) <= 0)
+    	    	    {
+    	    	    	    startTime = game.time.now;
+    	    	    	    if (choose1 === true)
+    	    	    	    {
+    	    	    	    	    choiceArray[runCount] = 1;
+    	    	    	    	    runCount = runCount + 1;
+    	    	    	    }
+    	    	    	    else if (choose2 === true)
+    	    	    	    {
+    	    	    	    	    choiceArray[runCount] = 2;
+    	    	    	    	    runCount = runCount + 1;
+    	    	    	    }
+    	    	    	    else
+    	    	    	    {
+    	    	    	    	    runCount = runCount + 1;
+    	    	    	    }
+    	    	    	    if (runCount === 4)
+    	    	    	    {
+    	    	    	    	    gameRunning = false;
+    	    	    	    	    endGame();
+    	    	    	    }
+    	    	    }
+    	    
+    	    	    player.body.velocity.x = 0;
+    	    	    player.body.velocity.y = 0;
+    	    	    if (cursors.up.isDown && cursors.right.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.y = -200;
+    	    	    	    player.body.velocity.x = 200;
+    	    	    	    player.animations.play('right');
+    	    	    }
+    	    	    else if (cursors.up.isDown && cursors.left.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.y = -200;
+    	    	    	    player.body.velocity.x = -200;
+    	    	    	    player.animations.play('left');
+    	    	    }
+    	    	    else if (cursors.down.isDown && cursors.right.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.y = 200;
+    	    	    	    player.body.velocity.x = 200;
+    	    	    	    player.animations.play('right');
+    	    	    }
+    	    	    else if (cursors.left.isDown && cursors.down.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.y = 200;
+    	    	    	    player.body.velocity.x = -200;
+    	    	    	    player.animations.play('left');
+    	    	    }
+    	    	    else if (cursors.up.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.y = -200;
+    	    	    	    player.frame = 4;
+    	    	    }
+    	    	    else if (cursors.down.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.y = 200;
+    	    	    	    player.frame = 4;
+    	    	    }
+    	    	    else if (cursors.left.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.x = -200;
+    	    	    	    player.animations.play('left');
+    	    	    }
+    	    	    else if (cursors.right.isDown)
+    	    	    {
+    	    	    	    player.body.velocity.x = 200;
+    	    	    	    player.animations.play('right');
     	    	    }
     	    	    else
     	    	    {
-    	    	    	    runCount = runCount + 1;
+    	    	    	    player.frame = 4;
     	    	    }
-    	    	    if (runCount === 4)
+    	    
+    	    	    choose1 = false;
+    	    	    choose2 = false;
+    	    
+    	    	    game.physics.arcade.overlap(player, b1, touchB1, null, this);
+    	    	    game.physics.arcade.overlap(player, b2, touchB2, null, this);
+    	    
+    	    	    if (choose1 === false && choose2 === false)
     	    	    {
-    	    	    	    endGame();
+    	    	    	    bdown.x = -500;
+    	    	    	    bdown.y = -500;
     	    	    }
     	    }
-    	    
-    	    player.body.velocity.x = 0;
-    	    player.body.velocity.y = 0;
-    	    if (cursors.up.isDown && cursors.right.isDown)
-    	    {
-    	    	    player.body.velocity.y = -200;
-    	    	    player.body.velocity.x = 200;
-    	    	    player.animations.play('right');
-    	    }
-    	    else if (cursors.up.isDown && cursors.left.isDown)
-    	    {
-    	    	    player.body.velocity.y = -200;
-    	    	    player.body.velocity.x = -200;
-    	    	    player.animations.play('left');
-    	    }
-    	    else if (cursors.down.isDown && cursors.right.isDown)
-    	    {
-    	    	    player.body.velocity.y = 200;
-    	    	    player.body.velocity.x = 200;
-    	    	    player.animations.play('right');
-    	    }
-    	    else if (cursors.left.isDown && cursors.down.isDown)
-    	    {
-    	    	    player.body.velocity.y = 200;
-    	    	    player.body.velocity.x = -200;
-    	    	    player.animations.play('left');
-    	    }
-    	    else if (cursors.up.isDown)
-    	    {
-    	    	    player.body.velocity.y = -200;
-    	    	    player.frame = 4;
-    	    }
-    	    else if (cursors.down.isDown)
-    	    {
-    	    	    player.body.velocity.y = 200;
-    	    	    player.frame = 4;
-    	    }
-    	    else if (cursors.left.isDown)
-    	    {
-    	    	    player.body.velocity.x = -200;
-    	    	    player.animations.play('left');
-    	    }
-    	    else if (cursors.right.isDown)
-    	    {
-    	    	    player.body.velocity.x = 200;
-    	    	    player.animations.play('right');
-    	    }
-    	    else
-    	    {
-    	    	    player.frame = 4;
-    	    }
-    	    
-    	    choose1 = false;
-    	    choose2 = false;
-    	    
-    	    game.physics.arcade.overlap(player, b1, touchB1, null, this);
-    	    game.physics.arcade.overlap(player, b2, touchB2, null, this);
-    	    
-    	    if (choose1 === false && choose2 === false)
-    	    {
-    	    	    bdown.x = -500;
-    	    	    bdown.y = -500;
-    	    }
-    	    
+    	   
     	    
     	    
     	    
@@ -817,12 +822,12 @@ window.onload = function()
     function endGame()
     {
     	    var endback = game.add.sprite(0, 0, 'endback');
-    	    var tx1 = 'For your' + choice[0] + 'you' + choiceText[choiceArray[0]] + '.\n';
-    	    var tx2 = 'For your' + choice[1] + 'you' + choiceText[choiceArray[1]] + '.\n';
-    	    var tx3 = 'For your' + choice[2] + 'you' + choiceText[choiceArray[2]] + '.\n';
-    	    var tx4 = 'For your' + choice[3] + 'you' + choiceText[choiceArray[3]] + '.\n';
-    	    var tx5 = 'For your' + choice[4] + 'you' + choiceText[choiceArray[4]] + '.\n';
-    	    var endtext = game.add.text(300, 75, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?', textStyle);
+    	    var tx1 = 'For your ' + choice[0] + ' you ' + choiceText[choiceArray[0]] + '.\n';
+    	    var tx2 = 'For your ' + choice[1] + ' you ' + choiceText[choiceArray[1]] + '.\n';
+    	    var tx3 = 'For your ' + choice[2] + ' you ' + choiceText[choiceArray[2]] + '.\n';
+    	    var tx4 = 'For your ' + choice[3] + ' you ' + choiceText[choiceArray[3]] + '.\n';
+    	    var tx5 = 'For your ' + choice[4] + ' you ' + choiceText[choiceArray[4]] + '.\n';
+    	    var endtext = game.add.text(100, 75, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?', textStyle);
     }
     
     
