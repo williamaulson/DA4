@@ -148,7 +148,7 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, p1Text, textStyle);
     	    text2 = game.add.text(780, 75, p2Text, textStyle);
     	    //timeText = game.add.text(490, 75, 'Time Left: ' + (game.time.now - startTime), textTimeStyle);
-    	    timeText = game.add.text(430, 75, 'Time Left: ' + Math.floor(((15000 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(430, 75, 'Time Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
