@@ -134,6 +134,8 @@ window.onload = function()
     var firstRun = true;
     var choiceArray = [3, 3, 3, 3, 3];
     var runCount = 0;
+    var choice = ['1st', '2nd', '3rd', '4th', '5th'];
+    var choiceText = ['', 'choose patient 1', 'choose patient 2', 'did not select any organ recipient'];
     
     function create() //create game objects needed to start
     {
@@ -815,6 +817,12 @@ window.onload = function()
     function endGame()
     {
     	    var endback = game.add.sprite(0, 0, 'endback');
+    	    var tx1 = 'For your' + choice[0] + 'you' + choiceText[choiceArray[0]] + '.\n';
+    	    var tx2 = 'For your' + choice[1] + 'you' + choiceText[choiceArray[1]] + '.\n';
+    	    var tx3 = 'For your' + choice[2] + 'you' + choiceText[choiceArray[2]] + '.\n';
+    	    var tx4 = 'For your' + choice[3] + 'you' + choiceText[choiceArray[3]] + '.\n';
+    	    var tx5 = 'For your' + choice[4] + 'you' + choiceText[choiceArray[4]] + '.\n';
+    	    var endtext = game.add.text(300, 75, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?', textStyle);
     }
     
     
