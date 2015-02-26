@@ -111,6 +111,7 @@ window.onload = function()
     var text2;
     var textStyle = { font: "30px Arial", fill: "#000000", align: "left" };
     var textTimeStyle = { font: "30px Arial", fill: "#000000", align: "center" };
+    var textTitleStyle = { font: "40px Arial", fill: "#000000", align: "center" };
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
     //var p2Text = 'Patient 2\nAge: 52\nUnemployed';
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family';
@@ -167,9 +168,9 @@ window.onload = function()
     	    
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
-    	    var titleText = game.add.text(340, 25, 'Choose the Organ Recipient', textTimeStyle);
-    	    timeText = game.add.text(450, 75, 'ATime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
-    	    hurryText = game.add.text(450, 400, '', textTimeStyle);
+    	    var titleText = game.add.text(340, 25, 'Choose the Organ Recipient', textTitleStyle);
+    	    timeText = game.add.text(450, 75, 'ZTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    hurryText = game.add.text(470, 350, '', textTitleStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
