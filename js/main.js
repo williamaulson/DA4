@@ -104,6 +104,8 @@ window.onload = function()
     var b1;
     var b2;
     var bdown;
+    var choose1 = false;
+    var choose2 = false;
     
     function create() //create game objects needed to start
     {
@@ -116,7 +118,7 @@ window.onload = function()
     	    b1.anchor.setTo(0.5, 0.5);
     	    game.physics.arcade.enable(b1);
     	    b1.body.immovable = true;
-    	    b2 = game.add.sprite(974, 450, 'b2');
+    	    b2 = game.add.sprite(874, 450, 'b2');
     	    b2.anchor.setTo(0.5, 0.5);
     	    game.physics.arcade.enable(b2);
     	    b2.body.immovable = true;
@@ -298,11 +300,18 @@ window.onload = function()
     	    {
     	    	    player.frame = 4;
     	    }
-    	  
-
-    	   
     	    
+    	    choose1 = false;
+    	    choose2 = false;
     	    
+    	    game.physics.arcade.collide(player, b1, touchB1, null, this);
+    	    game.physics.arcade.collide(player, b2, touchB2, null, this);
+    	    
+    	    if (choose1 === false && choose2 === false)
+    	    {
+    	    	    bdown.x = -500;
+    	    	    bdown.y = -500;
+    	    }
     	    
     	    
     	    
@@ -708,8 +717,19 @@ window.onload = function()
     	    //game.debug.spriteCoords(game.camera, 32, 32);
     }
     
+    function touchB1()
+    {
+    	    bdown.x = 150;
+    	    bdown.y = 450;
+    	    choose1 = true;
+    }
     
-    
+    function touchB2()
+    {
+    	    bdown.x = 874;
+    	    bdown.y = 450;
+    	    choose2 = true;
+    }
     
     
     
