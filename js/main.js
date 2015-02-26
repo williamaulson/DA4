@@ -115,6 +115,8 @@ window.onload = function()
     //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children';
     var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive';
     var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
+    var startTime = game.time.now;
+    var timeText;
     
     function create() //create game objects needed to start
     {
@@ -134,15 +136,16 @@ window.onload = function()
     	    bdown = game.add.sprite(-500, -500, 'bdown');
     	    bdown.anchor.setTo(0.5, 0.5);
     	    
-    	    text1 = game.add.text(75, 75, p1Text, textStyle);
-    	    text2 = game.add.text(790, 75, p2Text, textStyle);
-    	    
     	    player = game.add.sprite(512, 400, 'dude');
     	    game.physics.arcade.enable(player);
     	    player.body.collideWorldBounds = true;
     	    player.animations.add('left', [0, 1, 2, 3], 10, true);
     	    player.animations.add('right', [5, 6, 7, 8], 10, true);
     	    
+    	    text1 = game.add.text(75, 75, p1Text, textStyle);
+    	    text2 = game.add.text(790, 75, p2Text, textStyle);
+    	    timeText = game.add.text(512, 75, 'Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60), textStyle);
+    	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     	    
@@ -261,6 +264,7 @@ window.onload = function()
     
     function update() //check every frame
     {
+    	    timeText.setText('Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60));
     	    
     	    player.body.velocity.x = 0;
     	    player.body.velocity.y = 0;
