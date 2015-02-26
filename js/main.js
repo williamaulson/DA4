@@ -109,8 +109,8 @@ window.onload = function()
     var text1;
     var text2;
     var textStyle = { font: "30px Arial", fill: "#000000", align: "center" };
-    var p1Text = 'Patient 1\nAge: 24\n';
-    var p2Text = 'Patient 1\nAge: 24\n';
+    var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
+    var p2Text = 'Patient 2\nAge: 52\nIn Prison';
     
     function create() //create game objects needed to start
     {
