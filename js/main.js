@@ -96,6 +96,8 @@ window.onload = function()
     var death;*/
     
     var player;
+    var cursors;
+    var spaceKey;
     
     function create() //create game objects needed to start
     {
@@ -110,8 +112,8 @@ window.onload = function()
     	    player.animations.add('left', [0, 1, 2, 3], 10, true);
     	    player.animations.add('right', [5, 6, 7, 8], 10, true);
     	    
-    	    
-    	    
+    	    cursors = game.input.keyboard.createCursorKeys();
+    	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     	    
     	    
     	    
@@ -228,6 +230,57 @@ window.onload = function()
     
     function update() //check every frame
     {
+    	    
+    	    player.body.velocity.x = 0;
+    	    player.body.velocity.y = 0;
+    	    if (cursors.up.isDown && cursors.right.isDown)
+    	    {
+    	    	    player.body.velocity.y = -200;
+    	    	    player.body.velocity.x = 200;
+    	    	    player.animations.play('right');
+    	    }
+    	    else if (cursors.up.isDown && cursors.left.isDown)
+    	    {
+    	    	    player.body.velocity.y = -200;
+    	    	    player.body.velocity.x = -200;
+    	    	    player.animations.play('left');
+    	    }
+    	    else if (cursors.down.isDown && cursors.right.isDown)
+    	    {
+    	    	    player.body.velocity.y = 200;
+    	    	    player.body.velocity.x = 200;
+    	    	    player.animations.play('right');
+    	    }
+    	    else if (cursors.left.isDown && cursors.down.isDown)
+    	    {
+    	    	    player.body.velocity.y = 200;
+    	    	    player.body.velocity.x = -200;
+    	    	    player.animations.play('left');
+    	    }
+    	    else if (cursors.up.isDown)
+    	    {
+    	    	    player.body.velocity.y = -200;
+    	    	    player.frame = 4;
+    	    }
+    	    else if (cursors.down.isDown)
+    	    {
+    	    	    player.body.velocity.y = 200;
+    	    	    player.frame = 4;
+    	    }
+    	    else if (cursors.left.isDown)
+    	    {
+    	    	    player.body.velocity.x = -200;
+    	    	    player.animations.play('left');
+    	    }
+    	    else if (cursors.right.isDown)
+    	    {
+    	    	    player.body.velocity.x = 200;
+    	    	    player.animations.play('right');
+    	    }
+    	    else
+    	    {
+    	    	    player.frame = 4;
+    	    }
     	  
 
     	   
