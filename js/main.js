@@ -130,8 +130,8 @@ window.onload = function()
     	    bdown = game.add.sprite(-500, -500, 'bdown');
     	    bdown.anchor.setTo(0.5, 0.5);
     	    
-    	    text1 = game.add.text(25, 30, pt1Text, textStyle);
-    	    text2 = game.add.text(999, 10, pt2Text, textStyle);
+    	    text1 = game.add.text(25, 30, p1Text, textStyle);
+    	    text2 = game.add.text(999, 10, p2Text, textStyle);
     	    
     	    player = game.add.sprite(512, 400, 'dude');
     	    game.physics.arcade.enable(player);
