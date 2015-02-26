@@ -145,7 +145,7 @@ window.onload = function()
     	    
     	    text1 = game.add.text(75, 75, p1Text, textStyle);
     	    text2 = game.add.text(790, 75, p2Text, textStyle);
-    	    timeText = game.add.text(512, 75, 'Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60), textStyle);
+    	    //timeText = game.add.text(512, 75, 'Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60), textStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -265,7 +265,7 @@ window.onload = function()
     
     function update() //check every frame
     {
-    	    timeText.setText('Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60));
+    	    //timeText.setText('Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60));
     	    
     	    player.body.velocity.x = 0;
     	    player.body.velocity.y = 0;
