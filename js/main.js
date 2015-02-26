@@ -108,7 +108,7 @@ window.onload = function()
     var choose2 = false;
     var text1;
     var text2;
-    var textStyle = { font: "30px Arial", fill: "#000000", align: "center" };
+    var textStyle = { font: "30px Arial", fill: "#000000", align: "left" };
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
     //var p2Text = 'Patient 2\nAge: 52\nIn Prison';
     var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nHIV Positive';
