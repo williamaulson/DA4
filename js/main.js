@@ -112,11 +112,23 @@ window.onload = function()
     var textStyle = { font: "30px Arial", fill: "#000000", align: "left" };
     var textTimeStyle = { font: "30px Arial", fill: "#000000", align: "center" };
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
-    //var p2Text = 'Patient 2\nAge: 52\nIn Prison';
+    //var p2Text = 'Patient 2\nAge: 52\nUnemployed';
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family';
     //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children';
-    var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive';
-    var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
+    //var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive';
+    //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
+    var p1text1 = ['Patient 1\nAge: 24\nWorks Retail', 'Patient 1\nAge: 24\nWorks Retail\nNo Family', 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive'];
+    var p2text1 = ['Patient 2\nAge: 52\nUnemployed', 'Patient 2\nAge: 52\nUnemployed\nThree Children', 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist'];
+    var p1text2 = p1text1;
+    var p1text3 = p1text1;
+    var p1text4 = p1text1;
+    var p1text5 = p1text1;
+    var p2text2 = p2text1;
+    var p2text3 = p2text1;
+    var p2text4 = p2text1;
+    var p2text5 = p2text1;
+    var textArray1 = [p1Text1, p1Text2, p1Text3, p1Text4, p1Text5];
+    var textArray2 = [p2Text1, p2Text2, p2Text3, p2Text4, p2Text5];
     var startTime;
     var timeText;
     var firstRun = true;
@@ -148,8 +160,8 @@ window.onload = function()
     	    player.animations.add('left', [0, 1, 2, 3], 10, true);
     	    player.animations.add('right', [5, 6, 7, 8], 10, true);
     	    
-    	    text1 = game.add.text(75, 75, p1Text, textStyle);
-    	    text2 = game.add.text(780, 75, p2Text, textStyle);
+    	    text1 = game.add.text(75, 75, textArray1[0][1], textStyle);
+    	    text2 = game.add.text(780, 75, textArray2[0][1], textStyle);
     	    //timeText = game.add.text(490, 75, 'Time Left: ' + (game.time.now - startTime), textTimeStyle);
     	    timeText = game.add.text(430, 75, 'Time Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	        	    
@@ -278,6 +290,18 @@ window.onload = function()
     function update() //check every frame
     {
     	    timeText.setText('Time Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60));
+    	    
+    	    if (((game.time.now - startTime) > 5000) && ((game.time.now - startTime) < 10000))
+    	    {
+    	    	    text1.setText(textArray1[runCount][1]);
+    	    	    text2.setText(textArray2[runCount][1]);
+    	    }
+    	    else if (((game.time.now - startTime) > 10000) && ((game.time.now - startTime) < 15999))
+    	    {
+    	    	    text1.setText(textArray1[runCount][2]);
+    	    	    text2.setText(textArray2[runCount][2]);  
+    	    }
+    	    
     	    if (Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60) <= 0)
     	    {
     	    	    startTime = game.time.now;
