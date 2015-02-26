@@ -118,8 +118,8 @@ window.onload = function()
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive';
     //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
         
-    var p1text1 = ['Patient 1\nAge: 25\nProstitute', 'Patient 1\nAge: 25\nProstitute\nMethamphetamine Addict', 'Patient 1\nAge: 25\nProstitute\nMethamphetamine Addict\nMurdered Family\nAttempted Suicide\nMultiple Times'];
-    var p2text1 = ['Patient 2\nAge: 38\nExecutive', 'Patient 2\nAge: 38\nExecutive\nServed Time\nFor Embezzlement', 'Patient 2\nAge: 38\nExecutive\nServed Time\nFor Embezzlement\nDonates to\nHate Groups'];
+    var p1text1 = ['Patient 1\nAge: 25\nProstitute', 'Patient 1\nAge: 25\nProstitute\nMethamphetamine Addict', 'Patient 1\nAge: 25\nProstitute\nMethamphetamine Addict\nAttempted Suicide\nMultiple Times'];
+    var p2text1 = ['Patient 2\nAge: 38\nExecutive', 'Patient 2\nAge: 38\nExecutive\nServed Time for\nEmbezzlement', 'Patient 2\nAge: 38\nExecutive\nServed Time for\nEmbezzlement\nDonates to\nHate Groups'];
     var p1text2 = ['1p21', '1p22', '1p23'];
     var p1text3 = ['Patient 1\nAge: 15\nWard of the State', 'Patient 1\nAge: 15\nWard of the State\nMathematical Genius', 'Patient 1\nAge: 15\nWard of the State\nMathematical Genius\nMurdered Family\nWhen Age 12'];
     var p1text4 = ['Patient 1\nAge: 33\nDay Laborer', 'Patient 1\nAge: 33\nDay Laborer\nConvicted Felon', 'Patient 1\nAge: 33\nDay Laborer\nConvicted Felon\nAvid Knitter'];
@@ -167,7 +167,7 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    //timeText = game.add.text(490, 75, 'Time Left: ' + (game.time.now - startTime), textTimeStyle);
-    	    timeText = game.add.text(450, 75, 'VTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(450, 75, 'QTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
