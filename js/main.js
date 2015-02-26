@@ -143,6 +143,7 @@ window.onload = function()
     var gameRunning = true;
     var hurryText;
     var beat;
+    var tick;
     
     function create() //create game objects needed to start
     {
