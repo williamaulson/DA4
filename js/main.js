@@ -39,7 +39,7 @@ window.onload = function()
     	    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
     	    game.load.image( 'b1', 'assets/b1.png' )
     	    game.load.image( 'b2', 'assets/b2.png' )
-    	    game.load.image( 'bdown', 'assets/b2.png' )
+    	    game.load.image( 'bdown', 'assets/bdown.png' )
     }
     //variables
    /* var player1;
