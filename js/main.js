@@ -138,6 +138,7 @@ window.onload = function()
     var choice = ['1st', '2nd', '3rd', '4th', '5th'];
     var choiceText = ['', 'choose patient 1', 'choose patient 2', 'did not select any organ recipient'];
     var gameRunning = true;
+    var hurryText;
     
     function create() //create game objects needed to start
     {
@@ -167,7 +168,8 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    var titleText = game.add.text(340, 25, 'Choose the Organ Recipient', textTimeStyle);
-    	    timeText = game.add.text(450, 75, 'LTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(450, 75, 'ATime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    hurryText = game.add.text(450, 400, '', textTimeStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -300,16 +302,19 @@ window.onload = function()
     	    
     	    	    if (((game.time.now - startTime) < 5000))
     	    	    {
+    	    	    	    hurryText.setText('');
     	    	    	    text1.setText(textArray1[runCount][0]);
     	    	    	    text2.setText(textArray2[runCount][0]);
     	    	    }
     	    	    else if (((game.time.now - startTime) > 5000) && ((game.time.now - startTime) < 10000))
     	    	    {
+    	    	    	    hurryText.setText('');
     	    	    	    text1.setText(textArray1[runCount][1]);
     	    	    	    text2.setText(textArray2[runCount][1]);
     	    	    }
     	    	    else if (((game.time.now - startTime) > 10000) && ((game.time.now - startTime) < 15999))
     	    	    {
+    	    	    	    hurryText.setText('Hurry!');
     	    	    	    text1.setText(textArray1[runCount][2]);
     	    	    	    text2.setText(textArray2[runCount][2]);  
     	    	    }
