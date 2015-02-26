@@ -41,6 +41,8 @@ window.onload = function()
     	    game.load.image( 'b1', 'assets/b1.png' );
     	    game.load.image( 'b2', 'assets/b2.png' );
     	    game.load.image( 'bdown', 'assets/bdown.png' );
+    	    game.load.audio('beat', 'assets/beat.mp3');
+    	    game.load.audio('tick', 'assets/tick.mp3');
     }
     //variables
    /* var player1;
@@ -140,6 +142,7 @@ window.onload = function()
     var choiceText = ['', 'choose patient 1', 'choose patient 2', 'did not select any organ recipient'];
     var gameRunning = true;
     var hurryText;
+    var beat;
     
     function create() //create game objects needed to start
     {
@@ -169,10 +172,9 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    var titleText = game.add.text(280, 15, 'Choose the Organ Recipient', textTitleStyle);
-    	    timeText = game.add.text(450, 75, 'RTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(450, 75, 'ZTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	    hurryText = game.add.text(470, 270, '', textTitleStyle);
-    	    game.add.tween(hurryText).to( { alpha: 1 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
-    	        	    
+    	        	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     	    
@@ -267,6 +269,11 @@ window.onload = function()
     	    music = game.add.audio('music');
     	    music.play('',0,1,true);*/
     	    
+    	    beat = game.add.audio('beat');
+    	    beat.play('',0,0.1,true);
+    	    
+    	    tick = game.add.audio('tick');
+    	    
     	    game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
     	    game.input.onDown.add(fullScreenStart, this);
     	    game.paused = true;
@@ -324,6 +331,7 @@ window.onload = function()
     	    	    if (Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60) <= 0)
     	    	    {
     	    	    	    startTime = game.time.now;
+    	    	    	    tick.play();
     	    	    	    if (choose1 === true)
     	    	    	    {
     	    	    	    	    choiceArray[runCount] = 1;
