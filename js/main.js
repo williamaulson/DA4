@@ -109,6 +109,7 @@ window.onload = function()
     var text1;
     var text2;
     var textStyle = { font: "30px Arial", fill: "#000000", align: "left" };
+    var textTimeStyle = { font: "30px Arial", fill: "#000000", align: "center" };
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
     //var p2Text = 'Patient 2\nAge: 52\nIn Prison';
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family';
@@ -145,7 +146,7 @@ window.onload = function()
     	    
     	    text1 = game.add.text(75, 75, p1Text, textStyle);
     	    text2 = game.add.text(780, 75, p2Text, textStyle);
-    	    timeText = game.add.text(512, 75, 'Time Left: ' + 45, textStyle);
+    	    timeText = game.add.text(512, 75, 'Time Left: ' + (game.time.now - startTime), textTimeStyle);
     	    //timeText = game.add.text(512, 75, 'Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60), textStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
