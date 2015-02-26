@@ -127,8 +127,8 @@ window.onload = function()
     var p2text3 = p2text1;
     var p2text4 = p2text1;
     var p2text5 = p2text1;
-    var textArray1 = [p1Text1, p1Text2, p1Text3, p1Text4, p1Text5];
-    var textArray2 = [p2Text1, p2Text2, p2Text3, p2Text4, p2Text5];
+    var textArray1 = [p1text1, p1text2, p1text3, p1text4, p1text5];
+    var textArray2 = [p2text1, p2text2, p2text3, p2text4, p2text5];
     var startTime;
     var timeText;
     var firstRun = true;
