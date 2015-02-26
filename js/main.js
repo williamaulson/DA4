@@ -144,7 +144,8 @@ window.onload = function()
     	    player.animations.add('right', [5, 6, 7, 8], 10, true);
     	    
     	    text1 = game.add.text(75, 75, p1Text, textStyle);
-    	    text2 = game.add.text(790, 75, p2Text, textStyle);
+    	    text2 = game.add.text(780, 75, p2Text, textStyle);
+    	    timeText = game.add.text(512, 75, 'Time Left: ' + 45, textStyle);
     	    //timeText = game.add.text(512, 75, 'Time Left: ' + (((15000 - (game.time.now - startTime) / 1000) % 60), textStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
