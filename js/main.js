@@ -111,8 +111,10 @@ window.onload = function()
     var textStyle = { font: "30px Arial", fill: "#000000", align: "left" };
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail';
     //var p2Text = 'Patient 2\nAge: 52\nIn Prison';
-    var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nHIV Positive';
-    var p2Text = 'Patient 2\nAge: 52\nUnemployed\nConvicted of Rape';
+    var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family';
+    var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children';
+    //var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive';
+    //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
     
     function create() //create game objects needed to start
     {
