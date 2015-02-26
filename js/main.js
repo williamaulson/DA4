@@ -286,9 +286,13 @@ window.onload = function()
     	    	    	    choiceArray[runCount] = 1;
     	    	    	    runCount = runCount + 1;
     	    	    }
-    	    	    if (choose2 === true)
+    	    	    else if (choose2 === true)
     	    	    {
     	    	    	    choiceArray[runCount] = 2;
+    	    	    	    runCount = runCount + 1;
+    	    	    }
+    	    	    else
+    	    	    {
     	    	    	    runCount = runCount + 1;
     	    	    }
     	    	    if (runCount === 4)
