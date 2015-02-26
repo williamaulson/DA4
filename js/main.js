@@ -117,16 +117,16 @@ window.onload = function()
     //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children';
     //var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive';
     //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
-    var p1text1 = ['Patient 1\nAge: 24\nWorks Retail', 'Patient 1\nAge: 24\nWorks Retail\nNo Family', 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive'];
-    var p2text1 = ['Patient 2\nAge: 52\nUnemployed', 'Patient 2\nAge: 52\nUnemployed\nThree Children', 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist'];
+    var p1text1 = ['Patient 1\nAge: 33\nWorks Retail', 'Patient 1\nAge: 24\nWorks Retail\nNo Family', 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive'];
+    var p2text1 = ['Patient 2\nAge: 22\nOn Welfare', 'Patient 2\nAge: 52\nOn Welfare\nPregnant', 'Patient 2\nAge: 52\nOn Welfare\nPregnant\nHistory of\nCocaine Abuse'];
     var p1text2 = ['1p21', '1p22', '1p23'];
     var p1text3 = ['1p31', '1p32', '1p33'];
     var p1text4 = ['1p41', '1p42', '1p43'];
     var p1text5 = ['1p51', '1p52', '1p53'];
     var p2text2 = ['2p21', '2p22', '2p23'];
     var p2text3 = ['2p31', '2p32', '2p33'];
-    var p2text4 = ['2p41', '2p42', '2p43'];
-    var p2text5 = ['2p51', '2p52', '2p53'];
+    var p2text4 = ['Patient 1\nAge: 24\nWorks Retail', 'Patient 1\nAge: 24\nWorks Retail\nNo Family', 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive'];
+    var p2text5 = ['Patient 2\nAge: 52\nUnemployed', 'Patient 2\nAge: 52\nUnemployed\nThree Children', 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist'];
     var textArray1 = [p1text1, p1text2, p1text3, p1text4, p1text5];
     var textArray2 = [p2text1, p2text2, p2text3, p2text4, p2text5];
     var startTime;
@@ -827,7 +827,7 @@ window.onload = function()
     	    var tx3 = 'For your ' + choice[2] + ' choice you ' + choiceText[choiceArray[2]] + '.\n\n';
     	    var tx4 = 'For your ' + choice[3] + ' choice you ' + choiceText[choiceArray[3]] + '.\n\n';
     	    var tx5 = 'For your ' + choice[4] + ' choice you ' + choiceText[choiceArray[4]] + '.\n\n';
-    	    var endtext = game.add.text(110, 75, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?', textStyle);
+    	    var endtext = game.add.text(110, 55, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?\n\nDid the information word selections affect your choice?', textStyle);
     }
     
     
