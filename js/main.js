@@ -112,11 +112,11 @@ window.onload = function()
     	    game.world.setBounds(0, 0, 1024, 576);
     	    var back = game.add.sprite(0, 0, 'back');
     	    
-    	    b1 = game.add.sprite(100, 400, 'b1');
+    	    b1 = game.add.sprite(150, 450, 'b1');
     	    b1.anchor.setTo(0.5, 0.5);
     	    game.physics.arcade.enable(b1);
     	    b1.body.immovable = true;
-    	    b2 = game.add.sprite(924, 400, 'b2');
+    	    b2 = game.add.sprite(974, 450, 'b2');
     	    b2.anchor.setTo(0.5, 0.5);
     	    game.physics.arcade.enable(b2);
     	    b2.body.immovable = true;
