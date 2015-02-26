@@ -159,6 +159,7 @@ window.onload = function()
     	    	    	    }
     	    	    	    if (runCount === 5)
     	    	    	    {
+    	    	    	    	    beat.stop();
     	    	    	    	    gameRunning = false;
     	    	    	    	    endGame();
     	    	    	    }

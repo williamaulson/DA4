@@ -49,7 +49,7 @@ window.onload = function()
     var choiceArray = [3, 3, 3, 3, 3];
     var runCount = 0;
     var choice = ['1st', '2nd', '3rd', '4th', '5th'];
-    var choiceText = ['', 'choose patient 1', 'choose patient 2', 'did not select any organ recipient'];
+    var choiceText = ['', 'chose patient 1', 'chose patient 2', 'did not select any organ recipient'];
     var gameRunning = true;
     var hurryText;
     var beat;
