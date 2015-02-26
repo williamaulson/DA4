@@ -118,6 +118,7 @@ window.onload = function()
     var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
     var startTime;
     var timeText;
+    var firstRun = true;
     
     function create() //create game objects needed to start
     {
@@ -260,6 +261,12 @@ window.onload = function()
     	    }
     	    else
     	    {
+    	    	    if (firstRun)
+    	    	    {
+    	    	    	    startTime = game.time.now;
+    	    	    	    firstRun = false;
+    	    	    }
+    	    	    
     	    	    game.scale.startFullScreen(true);
     	    	    game.paused = false;
     	    }
@@ -268,7 +275,7 @@ window.onload = function()
     function update() //check every frame
     {
     	    timeText.setText('Time Left: ' + Math.floor(((15000 - (game.time.now - startTime)) / 1000) % 60));
-    	    if (Math.floor(((15000 - (game.time.now - startTime)) / 1000) % 60) <= 0)
+    	    if (Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60) <= 0)
     	    {
     	    	    startTime = game.time.now;
     	    }
