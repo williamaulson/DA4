@@ -35,11 +35,12 @@ window.onload = function()
     	    game.load.audio('music', 'assets/music.mp3');
     	    game.load.audio('death', 'assets/death.mp3');*/
     	    
-    	    game.load.image( 'back', 'assets/back.png' )
+    	    game.load.image( 'back', 'assets/back.png' );
+    	    game.load.image( 'endback', 'assets/endback.png' );
     	    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
-    	    game.load.image( 'b1', 'assets/b1.png' )
-    	    game.load.image( 'b2', 'assets/b2.png' )
-    	    game.load.image( 'bdown', 'assets/bdown.png' )
+    	    game.load.image( 'b1', 'assets/b1.png' );
+    	    game.load.image( 'b2', 'assets/b2.png' );
+    	    game.load.image( 'bdown', 'assets/bdown.png' );
     }
     //variables
    /* var player1;
@@ -119,6 +120,8 @@ window.onload = function()
     var startTime;
     var timeText;
     var firstRun = true;
+    var choiceArray = [3, 3, 3, 3, 3];
+    var runCount = 0;
     
     function create() //create game objects needed to start
     {
@@ -278,6 +281,20 @@ window.onload = function()
     	    if (Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60) <= 0)
     	    {
     	    	    startTime = game.time.now;
+    	    	    if (choose1 === true)
+    	    	    {
+    	    	    	    choiceArray[runCount] = 1;
+    	    	    	    runCount = runCount + 1;
+    	    	    }
+    	    	    if (choose2 === true)
+    	    	    {
+    	    	    	    choiceArray[runCount] = 2;
+    	    	    	    runCount = runCount + 1;
+    	    	    }
+    	    	    if (runCount === 4)
+    	    	    {
+    	    	    	    endGame();
+    	    	    }
     	    }
     	    
     	    player.body.velocity.x = 0;
@@ -761,7 +778,10 @@ window.onload = function()
     	    choose2 = true;
     }
     
-    
+    function endGame()
+    {
+    	    var endback = game.add.sprite(0, 0, 'endback');
+    }
     
     
     
