@@ -115,11 +115,12 @@ window.onload = function()
     //var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children';
     var p1Text = 'Patient 1\nAge: 24\nWorks Retail\nNo Family\nHIV Positive';
     var p2Text = 'Patient 2\nAge: 52\nUnemployed\nThree Children\nConvicted Rapist';
-    var startTime = game.time.now;
+    var startTime;
     var timeText;
     
     function create() //create game objects needed to start
     {
+    	    startTime = game.time.now;
     	    
     	    game.physics.startSystem(Phaser.Physics.ARCADE);
     	    game.world.setBounds(0, 0, 1024, 576);
