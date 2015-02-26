@@ -120,8 +120,8 @@ window.onload = function()
     	    b2.anchor.setTo(0.5, 0.5);
     	    game.physics.arcade.enable(b2);
     	    b2.body.immovable = true;
-    	    b3 = game.add.sprite(-500, -500, 'b3');
-    	    b3.anchor.setTo(0.5, 0.5);
+    	    bdown = game.add.sprite(-500, -500, 'bdown');
+    	    bdown.anchor.setTo(0.5, 0.5);
     	    
     	    player = game.add.sprite(512, 400, 'dude');
     	    game.physics.arcade.enable(player);
