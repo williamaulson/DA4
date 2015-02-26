@@ -166,7 +166,7 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    //timeText = game.add.text(490, 75, 'Time Left: ' + (game.time.now - startTime), textTimeStyle);
-    	    timeText = game.add.text(450, 75, 'RTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(450, 75, 'STime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -827,7 +827,7 @@ window.onload = function()
     	    var tx3 = 'For your ' + choice[2] + ' choice you ' + choiceText[choiceArray[2]] + '.\n\n';
     	    var tx4 = 'For your ' + choice[3] + ' choice you ' + choiceText[choiceArray[3]] + '.\n\n';
     	    var tx5 = 'For your ' + choice[4] + ' choice you ' + choiceText[choiceArray[4]] + '.\n\n';
-    	    var endtext = game.add.text(110, 55, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?\n\nDid the information word selections affect your choice?', textStyle);
+    	    var endtext = game.add.text(110, 35, tx1 + tx2 + tx3 + tx4 + tx5 + 'Did more information make your decision easier or harder?\n\nDid the words used create patient preconceptions?', textStyle);
     }
     
     
