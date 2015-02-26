@@ -304,8 +304,8 @@ window.onload = function()
     	    choose1 = false;
     	    choose2 = false;
     	    
-    	    game.physics.arcade.collide(player, b1, touchB1, null, this);
-    	    game.physics.arcade.collide(player, b2, touchB2, null, this);
+    	    game.physics.arcade.overlap(player, b1, touchB1, null, this);
+    	    game.physics.arcade.overlap(player, b2, touchB2, null, this);
     	    
     	    if (choose1 === false && choose2 === false)
     	    {
