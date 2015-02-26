@@ -169,8 +169,9 @@ window.onload = function()
     	    text1 = game.add.text(75, 75, textArray1[0][0], textStyle);
     	    text2 = game.add.text(780, 75, textArray2[0][0], textStyle);
     	    var titleText = game.add.text(280, 15, 'Choose the Organ Recipient', textTitleStyle);
-    	    timeText = game.add.text(450, 75, 'XTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
+    	    timeText = game.add.text(450, 75, 'RTime Left: ' + Math.floor(((15999 - (game.time.now - startTime)) / 1000) % 60), textTimeStyle);
     	    hurryText = game.add.text(470, 270, '', textTitleStyle);
+    	    game.add.tween(hurryText).to( { alpha: 1 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
     	        	    
     	    cursors = game.input.keyboard.createCursorKeys();
     	    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -316,7 +317,6 @@ window.onload = function()
     	    	    else if (((game.time.now - startTime) > 10000) && ((game.time.now - startTime) < 15999))
     	    	    {
     	    	    	    hurryText.setText('Hurry!');
-    	    	    	    game.add.tween(hurryText).to( { alpha: 1 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
     	    	    	    text1.setText(textArray1[runCount][2]);
     	    	    	    text2.setText(textArray2[runCount][2]);  
     	    	    }
